@@ -1,29 +1,35 @@
 body {
   background-color: rgb(249, 249, 249);
 }
-main{
+
+main {
   padding: 1rem;
 }
 
 .appbar {
-  padding: 0.5rem;
+  padding: 1rem;
   width:100%;
 }
+
 .menu-small {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.menu-small svg{
+
+.menu-small svg {
    height: 26px;
    fill:#cf120f;
 }
- 
 
- .cart-items{
+.menu-small svg:hover {
+  cursor: pointer;
+}
+
+.cart-items {
    position: relative;
    font-size:14px;
- }
+}
  
 .cart-item-count {
   color:#cf120f;
@@ -33,23 +39,28 @@ main{
   font-weight: bold;
   display: inline;
 }
+
+.cart-item-count:hover {
+  cursor: pointer
+}
+
 /* Page Header Styles */
-.page-header{
+.page-header {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
   color:#575152;
   margin: 1.5rem 0;
 }
-.page-header h1{
+
+.page-header h1 {
   font-size: 3rem;
   line-height: 2.5rem;;
   font-weight: 800;
 }
-.page-header p{
+
+.page-header p {
   font-size:1.125rem;
 }
- 
-
 
 /* YOUR STYLE START HERE */
 body {
@@ -96,6 +107,11 @@ p {
 
 /* Medium Viewport */
 @media screen and (min-width: 992px) {
+  .appbar {
+    max-width: 1250px;
+    margin: 0 auto;
+  }
+
   main {
     display: flex;
     flex-wrap: wrap;
