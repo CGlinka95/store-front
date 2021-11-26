@@ -52,7 +52,14 @@
     }
     // click event handler for a product 
     function onRequestForInfo(e){
-        console.log(e.currentTarget.dataset.key)
+        // store contains the product data
+        // array.find()
+        const product = store.find(product=>{
+            const key = Number(e.currentTarget.dataset.key)
+            if(product.id === key){
+                return product
+            }
+        })
     }
  
     function addProductActions(products){

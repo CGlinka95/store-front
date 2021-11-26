@@ -52,21 +52,32 @@ main{
 
 
 /* YOUR STYLE START HERE */
+body {
+  background-color: lightpink;
+}
+
 .image {
   background-color: lightblue;
   border: solid black 1px;
+  padding: 1rem;
+  box-shadow: 5px 10px #888888;
+}
+
+h2 {
+  margin-top: 1rem;
+}
+
+.image:hover {
+  cursor: pointer
 }
 
 p {
+  font-weight: bold;
   margin-bottom: 2rem;
 }
 
 /* Medium Viewport */
 @media screen and (min-width: 768px) {
-  body {
-    background-color: orange;
-  }
-
   main {
     display: flex;
     flex-wrap: wrap;
@@ -85,10 +96,6 @@ p {
 
 /* Medium Viewport */
 @media screen and (min-width: 992px) {
-  body {
-    background-color: orange;
-  }
-
   main {
     display: flex;
     flex-wrap: wrap;
