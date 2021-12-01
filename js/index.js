@@ -23,7 +23,6 @@
             // document.body.append(product)
             main.append(product)
         })
-
         document.querySelector('.page-header').appendChild(main)
 
         // Code for array of functions (key feature of functional programming)
@@ -47,27 +46,25 @@
             `
             return document.createRange().createContextualFragment(template).children[0]
         })
-
         return elements
     }
+
     // click event handler for a product 
     function onRequestForInfo(e){
         // store contains the product data
         // array.find()
-        const product = store.find(product=>{
-            const key = Number(e.currentTarget.dataset.key)
-            if(product.id === key){
-                return product
-            }
-        })
+        const key = Number(e.currentTarget.dataset.key);
+        const selected = store.find(product=> product.id === key)
+        localStorage.setItem('product', JSON.stringify(selected))
+        window.location.assign('product.html')
     }
+    window.addEventListener('beforeunload',(e)=> e.preventDefault())
  
     function addProductActions(products){
         const elements = products.map(product =>{
             product.addEventListener('click', onRequestForInfo)
             return product
         })
-
         return elements
     }
 }
