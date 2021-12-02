@@ -1,0 +1,255 @@
+body {
+    background: rgb(58,180,170);
+    background: linear-gradient(45deg, rgba(58,180,170,1) 50%, rgba(153,29,253,0.7679446778711485) 50%, rgba(69,205,252,1)0%);
+}
+  
+main {
+    padding: 1rem;
+}
+  
+.appbar {
+    padding: 1rem;
+    width:100%;
+}
+  
+.menu-small {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.menu-small svg {
+     height: 26px;
+     fill:#cf120f;
+}
+  
+.menu-small svg:hover {
+    cursor: pointer;
+}
+  
+.cart-items {
+     position: relative;
+     font-size:14px;
+}
+   
+.cart-item-count {
+    color:#cf120f;
+    position: absolute;
+    top: 0px;
+    left: 16px;
+    font-weight: bold;
+    display: inline;
+}
+  
+.cart-item-count:hover {
+    cursor: pointer
+}
+  
+/* Page Header Styles */
+.page-header {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    color:#575152;
+    margin: 1.5rem 0;
+}
+  
+.page-header h1 {
+    font-size: 3rem;
+    line-height: 2.5rem;;
+    font-weight: 800;
+}
+  
+.page-header p {
+    font-size:1.125rem;
+}
+
+/* My Styles */
+.product {
+    max-width: 580px;
+    margin: 0 auto;
+}
+
+.product-shots {
+    background-color: transparent;
+    border: solid black 1px;
+    padding: 1rem;
+    box-shadow: 5px 5px 15px #888888;
+}
+
+.product-shots:hover {
+    cursor: pointer;
+}
+
+.product-shots li {
+    display: none;
+}
+
+.product-shots li:first-child {
+    display: block;
+}
+
+/* Price and name styles */
+.name {
+    font-size: 2rem;
+    font-weight: bold;
+    padding-top: 2rem;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+
+/* Quantity styles */
+.quantity {
+    margin: 1rem 0;
+}
+
+/* Sizes Styles */
+.sizes {
+    display: flex;
+    gap: 0.7rem;
+    margin: 0.5rem 0;
+}
+
+.size {
+    font-size: 0.75rem;
+    padding: 0.75rem;
+    color: lightblue;
+    background-color: #575152;
+    border-radius: 50px;
+    width: 48px;
+    text-align: center;
+    box-shadow: 5px 5px 15px #888888;
+}
+
+.size:hover {
+    cursor: pointer;
+    background-color: lightblue;
+    color: black;
+}
+
+/* Controls */
+.controls {
+    margin: 1rem 0;
+}
+
+button {
+    background-color: #575152;
+    color: lightblue;
+    border: none;
+    border-radius: rem;
+    padding: 0.5rem 2rem;
+    width: 100%;
+    font-size: 1.125rem;
+    margin: 0.5rem 0;
+    box-shadow: 5px 5px 15px #888888;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.controls li:last-child button {
+    background-color: #575152;
+}
+
+.controls li:first-child button:hover {
+    background-color: lightblue;
+    color: black;
+}
+
+.controls li:last-child button:hover {
+    background-color: lightblue;
+    color: black;
+}
+
+/* Description */
+.product-description {
+    padding-bottom: 1.5rem;
+    width: 100%;
+}
+
+.product-description h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Meta data */
+.meta-data {
+    display: flex;
+    gap: 1rem;
+}
+
+span {
+    padding-left: 0.2rem;
+    font-weight: bold;
+}
+
+/* Medium Viewport */
+@media screen and (min-width: 615px) {
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      max-width: 960px;
+      margin: 0 auto;
+      justify-content: space-between;
+    }
+  
+    .product {
+        max-width: 1200px;
+        display: flex;
+        margin: 0 auto;
+        gap: 2rem;
+        justify-content: center;
+    }
+
+    .product-shots {
+        width: 45%;
+    }
+
+    .product-shots li {
+        display: block;
+    }
+
+    .product-details {
+        width: 55%;
+    }
+
+    .name {
+        padding-top: 0;
+    }
+}
+  
+/* Medium Viewport */
+@media screen and (min-width: 992px) {
+    .appbar {
+      max-width: 1250px;
+      margin: 0 auto;
+    }
+  
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  
+    .product {
+      display: block;
+    }
+
+    .product-shots {
+        display: flex;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .product-details {
+        display: flex;
+        gap: 3rem;
+        width: 48%;
+    }
+}

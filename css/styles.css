@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(249, 249, 249);
+  background-color: lightpink;
 }
 
 main {
@@ -63,10 +63,6 @@ main {
 }
 
 /* YOUR STYLE START HERE */
-body {
-  background-color: lightpink;
-}
-
 .image {
   background-color: lightblue;
   border: solid black 1px;
