@@ -15,6 +15,7 @@
     .then(res=> res.json())
     .then(data=>{
         store = [...data]
+        localStorage.setItem('store', JSON.stringify(store))
         const productElements = renderProducts(data)
         const products = addProductActions(productElements)
         const main = document.createElement('main')
