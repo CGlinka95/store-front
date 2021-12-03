@@ -1,5 +1,6 @@
 body {
-  background-color: lightpink;
+    background: rgb(58,180,170);
+    background: linear-gradient(45deg, rgba(58,180,170,1) 50%, rgba(153,29,253,0.7679446778711485) 50%, rgba(69,205,252,1)0%);
 }
 
 main {
@@ -64,10 +65,10 @@ main {
 
 /* YOUR STYLE START HERE */
 .image {
-  background-color: lightblue;
-  border: solid black 1px;
-  padding: 1rem;
-  box-shadow: 5px 10px #888888;
+  background-color: transparent;
+    border: solid black 1px;
+    padding: 1rem;
+    box-shadow: 5px 5px 15px #888888;
 }
 
 h2 {
