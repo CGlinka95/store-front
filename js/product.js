@@ -47,19 +47,13 @@
 
 (function(){
     
-    const cartItems = getCartItems();
+  // REFRESH
+    if(!localStorage.getItem('cart')){
+        window.location.assign('index.html')
+    }  
 
-    function getCartItems(){
-      let cart;
-      if(localStorage.getItem('cartItems') === null){
-        const temp = JSON.stringify([{id:1}, {id:2}, {id:3}])
-        cart = localStorage.setItem('cartItems', temp)
-      }else{
-        cart = localStorage.getItem('cartItems')
-      }
-      return cart
-    }
-
+    const cartItems = JSON.parse(localStorage.getItem('cart'))
+    document.querySelector('#cartCount').textContent = cartItems.length
     const product = JSON.parse(localStorage.getItem('product'))
     const productItem = productDisplay(product, sizesFormatter)
 
@@ -68,7 +62,7 @@
     document.querySelector('main').append(productItem)
 
     function productDisplay(product, formatter){
-        const {name, price, long, sizes, short, id, productShots, meta} = product
+        const {name, price, long, sizes, id, productShots, meta} = product
         const {reviews, rating, views} = meta
         const template = `
                 <section class="product">
@@ -128,17 +122,12 @@
     }
 
     function onAddToCart(e) {
-      const cartCount = document.querySelector('#cartCount')
-      const key = Number(e.currentTarget.dataset.key)
-      const store = JSON.parse(localStorage.getItem('store'))
-      const addItem = store.find(product=> product.id === key)
-      const {id} = addItem
       const cartObject = {
-        id
+        id:e.currentTarget.dataset.key,
+        quantity:1,
       }
-
-      const itemsInCart = JSON.parse(cartItems)
-      cartCount.textContent = itemsInCart.length
+      document.querySelector('#cartCount').textContent = cartItems.length
+      localStorage.setItem('cart', JSON.stringify(cartItems))
     }
 
     function onCheckout(e) {

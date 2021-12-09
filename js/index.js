@@ -11,6 +11,14 @@
 (function(){
     //data dance
     let store;
+    // Create a cart in localStorage if one does not exist 
+    if(!localStorage.getItem('cart')){
+        const temp = JSON.stringify([])
+        localStorage.setItem('cart', temp)
+    }    
+
+    updateCartCount()
+
     fetch('./data/shoes.json')
     .then(res=> res.json())
     .then(data=>{
@@ -30,6 +38,11 @@
         // const products = compose(renderProducts(data), addProductEvents(),)
     })
     .catch(error=>console.log(error))
+
+    function updateCartCount(){
+        const cartItems = JSON.parse(localStorage.getItem('cart'))
+        document.querySelector('#cartCount').textContent = cartItems.length;
+    }
 
     function renderProducts(products) {
         const elements =  products.map((product)=>{
