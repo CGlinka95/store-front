@@ -50,6 +50,7 @@
   // REFRESH
     if(!localStorage.getItem('cart')){
         window.location.assign('index.html')
+        console.log("redirect back to the store front")
     }  
 
     const cartItems = JSON.parse(localStorage.getItem('cart'))
@@ -77,7 +78,7 @@
                         <div>
                             <header>
                                 <h2 class="name">${name}</h2>
-                                <p class="price">$${price/1000}</p>
+                                <p class="price">$${price/100}</p>
                             </header>
 
                             ${formatter(sizes)}
@@ -122,10 +123,12 @@
     }
 
     function onAddToCart(e) {
-      const cartObject = {
+      const cartObj = {
         id:e.currentTarget.dataset.key,
         quantity:1,
       }
+      console.log(cartItems)
+      cartItems.push(cartObj)
       document.querySelector('#cartCount').textContent = cartItems.length
       localStorage.setItem('cart', JSON.stringify(cartItems))
     }

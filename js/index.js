@@ -32,7 +32,7 @@
             // document.body.append(product)
             main.append(product)
         })
-        document.querySelector('.page-header').appendChild(main)
+        document.querySelector('.page-header').after(main)
 
         // Code for array of functions (key feature of functional programming)
         // const products = compose(renderProducts(data), addProductEvents(),)
@@ -46,7 +46,7 @@
 
     function renderProducts(products) {
         const elements =  products.map((product)=>{
-            const {id,price,thumbnail,name} = {...product}
+            const {id,price,thumbnail,name,short} = product
             const template = `
             <aside class="product" data-key=${id}>
                 <div class="image">
@@ -55,7 +55,7 @@
                 <header class="name">
                     <h2>${name}</h2>
                 </header>
-                <p class="price">$${price}</p>
+                <p class="price">$${price/100}</p>
             </aside>
             `
             return document.createRange().createContextualFragment(template).children[0]
